@@ -30,16 +30,17 @@ def login(req: LoginRequest):
         raise HTTPException(status_code=401, detail="账号或密码错误")
     return {"success": True, "message": "登录成功"}
 
-# 获取全部对联商品
-@app.get("/api/products")
-def get_products():
-    conn = get_db_connection()
-    cursor = conn.cursor(pymysql.cursors.DictCursor)
-    cursor.execute("SELECT * FROM product ORDER BY id DESC")
-    products = cursor.fetchall()
-    conn.close()
-    return products
-
+# CORS配置，完整复制
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "https://duiniang.pages.dev",
+        "https://jiangwei.xyz"
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 # 获取单个商品详情
 @app.get("/api/products/{product_id}")
 def get_product(product_id: int):
