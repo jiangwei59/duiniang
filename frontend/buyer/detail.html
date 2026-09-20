@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对联预定 - 商品详情</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="detail.css">
+</head>
+<body>
+    <header class="header">
+        <h1>🎨 对联预定售卖</h1>
+        <p>精选手写对联，传承传统文化</p>
+    </header>
+
+    <main class="container">
+        <div id="loading" class="loading">加载中...</div>
+        <div id="product-detail" class="detail-wrapper" style="display:none;">
+            <!-- 返回按钮 -->
+            <a href="index.html" class="back-btn">← 返回列表</a>
+
+            <!-- 商品图片轮播 -->
+            <div class="image-carousel">
+                <div class="carousel-container" id="carousel-container"></div>
+                <div class="carousel-dots" id="carousel-dots"></div>
+            </div>
+
+            <!-- 商品信息 -->
+            <div class="product-info">
+                <h2 class="product-title" id="product-title"></h2>
+                <div class="product-price" id="product-price"></div>
+                <div class="product-description" id="product-description"></div>
+
+                <!-- 视频演示 -->
+                <div class="video-section" id="video-section" style="display:none;">
+                    <h3>📹 书写演示视频</h3>
+                    <video id="product-video" controls>
+                        您的浏览器不支持视频播放
+                    </video>
+                </div>
+            </div>
+
+            <!-- 预定按钮 -->
+            <div class="action-bar">
+                <button class="btn-order" onclick="goToOrder()">立即预定</button>
+            </div>
+        </div>
+
+        <div id="error" class="error" style="display:none;">
+            <p>商品不存在或加载失败</p>
+            <a href="index.html" class="back-link">返回商品列表</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>© 2024 对联预定售卖系统</p>
+    </footer>
+
+    <script src="detail.js"></script>
+</body>
+</html>

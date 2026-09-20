@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对联预定 - 订单查询</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="query.css">
+</head>
+<body>
+    <header class="header">
+        <h1>🎨 对联预定售卖</h1>
+        <p>精选手写对联，传承传统文化</p>
+    </header>
+
+    <main class="container">
+        <!-- 查询表单 -->
+        <div class="query-form-wrapper">
+            <h2 class="query-title">查询我的订单</h2>
+            <form id="query-form" class="query-form">
+                <div class="form-group">
+                    <input type="tel" id="query-phone" placeholder="请输入下单时填写的手机号" required>
+                    <button type="submit" class="btn-query">查询</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- 订单列表 -->
+        <div id="order-list-wrapper" style="display:none;">
+            <div class="list-header">
+                <h3>我的订单</h3>
+                <span id="order-count" class="order-count"></span>
+            </div>
+            <div id="order-list" class="order-list"></div>
+        </div>
+
+        <!-- 空状态 -->
+        <div id="empty" class="empty" style="display:none;">
+            <p>暂无订单记录</p>
+        </div>
+
+        <!-- 加载状态 -->
+        <div id="loading" class="loading" style="display:none;">加载中...</div>
+
+        <!-- 返回首页 -->
+        <div class="back-home">
+            <a href="index.html">← 返回商品列表</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>© 2024 对联预定售卖系统</p>
+    </footer>
+
+    <script src="query.js"></script>
+</body>
+</html>

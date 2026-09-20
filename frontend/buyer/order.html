@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对联预定 - 提交预定</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="order.css">
+</head>
+<body>
+    <header class="header">
+        <h1>🎨 对联预定售卖</h1>
+        <p>精选手写对联，传承传统文化</p>
+    </header>
+
+    <main class="container">
+        <div id="loading" class="loading">加载中...</div>
+
+        <div id="order-form-wrapper" class="form-wrapper" style="display:none;">
+            <!-- 返回按钮 -->
+            <a href="javascript:history.back()" class="back-btn">← 返回</a>
+
+            <!-- 商品信息预览 -->
+            <div class="product-preview" id="product-preview">
+                <img id="preview-image" src="" alt="商品图片">
+                <div class="preview-info">
+                    <h3 id="preview-title"></h3>
+                    <p id="preview-price" class="price"></p>
+                </div>
+            </div>
+
+            <!-- 预定表单 -->
+            <form id="order-form" class="order-form">
+                <h2 class="form-title">填写预定信息</h2>
+
+                <div class="form-group">
+                    <label for="buyer-name">姓名 <span class="required">*</span></label>
+                    <input type="text" id="buyer-name" name="buyer_name" placeholder="请输入您的姓名" required>
+                    <span class="error-message" id="name-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="buyer-phone">手机号 <span class="required">*</span></label>
+                    <input type="tel" id="buyer-phone" name="buyer_phone" placeholder="请输入您的手机号" required>
+                    <span class="error-message" id="phone-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="buyer-address">收货地址 <span class="required">*</span></label>
+                    <textarea id="buyer-address" name="buyer_address" placeholder="请输入您的详细收货地址" rows="3" required></textarea>
+                    <span class="error-message" id="address-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="custom-remark">自定义对联备注</label>
+                    <textarea id="custom-re mark" name="custom_remark" placeholder="如有特殊要求，请在此说明（如：对联内容、尺寸、字体等）" rows="4"></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit" id="submit-btn">提交预定</button>
+            </form>
+        </div>
+
+        <!-- 预定成功提示 -->
+        <div id="success-message" class="success-message" style="display:none;">
+            <div class="success-icon">✓</div>
+            <h2>预定成功！</h2>
+            <p>您的订单号：<span id="order-no"></span></p>
+            <p class="success-tip">请妥善保存订单号，可用于查询订单状态</p>
+            <div class="success-actions">
+                <a href="index.html" class="btn-home">继续浏览</a>
+                <a href="query.html" class="btn-query">查询订单</a>
+            </div>
+        </div>
+
+        <div id="error" class="error" style="display:none;">
+            <p>商品信息加载失败</p>
+            <a href="index.html" class="back-link">返回商品列表</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>© 2024 对联预定售卖系统</p>
+    </footer>
+
+    <script src="order.js"></script>
+</body>
+</html>
